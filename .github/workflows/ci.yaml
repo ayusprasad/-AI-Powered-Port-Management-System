@@ -1,0 +1,32 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate:
+    name: Validate Configurations & Architecture
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate Core Specs
+        run: |
+          python -c "import os; assert os.path.exists('requirements-core.txt')"
+          python -c "import os; assert os.path.exists('alembic.ini')"
+
+  docker:
+    name: Build Docker Compose Stack
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Stack
+        run: |
+          docker compose build
