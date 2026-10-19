@@ -1,4 +1,4 @@
-.PHONY: help install dev-install lint format type-check test test-cov migrate migrate-create run setup-dirs clean
+.PHONY: help install dev-install lint format type-check test test-cov build migrate migrate-create run setup-dirs clean
 
 PYTHON := python
 UVICORN_CMD := uvicorn app.main:app
@@ -11,7 +11,8 @@ install: ## Install production dependencies
 
 dev-install: ## Install all dependencies including dev
 	pip install -r requirements-dev.txt
-	lint: ## Run ruff linter
+
+lint: ## Run ruff linter
 	ruff check app/ config/ tests/
 
 format: ## Auto-format code with ruff
@@ -22,6 +23,9 @@ type-check: ## Run mypy type checker
 
 test: ## Run tests
 	pytest tests/
+
+build: ## Build source distribution and wheel
+	python -m build
 
 test-cov: ## Run tests with coverage
 	pytest tests/ --cov=app --cov-report=html
