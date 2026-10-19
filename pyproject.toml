@@ -42,4 +42,4 @@ omit = ["tests/*", "alembic/*", "scripts/*"]
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["app*", "config*"]
+include = ["src*", "application_configuration*"]
