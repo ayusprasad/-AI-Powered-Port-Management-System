@@ -1,4 +1,10 @@
-# DocuRAG — Enterprise AI Document Intelligence & Retrieval-Augmented Generation System
+# DocuRAG — Document Intelligence and Retrieval-Augmented Generation
+
+[![CI](https://github.com/ayusprasad/-AI-Powered-Port-Management-System/actions/workflows/ci.yml/badge.svg)](https://github.com/ayusprasad/-AI-Powered-Port-Management-System/actions/workflows/ci.yml)
+![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-API-009688?logo=fastapi&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-4169E1?logo=postgresql&logoColor=white)
+![RAG](https://img.shields.io/badge/AI-RAG%20pipeline-7B61FF?logo=openai&logoColor=white)
 
 > **CPU‑optimised, open‑source, production‑grade Document Intelligence platform** with Retrieval‑Augmented Generation, citation‑aware answers, and a fully modular agent architecture.
 
